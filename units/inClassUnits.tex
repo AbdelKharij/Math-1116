@@ -1,0 +1,390 @@
+\documentclass[12pt]{ximera}
+\input{../xmPreamble}
+\title{Units and Unit Conversion}
+\begin{document}
+\begin{abstract}
+Converting between units by writing equivalences as fractions, why some conversions
+are nonsense, the difference between length, area, and volume units, the metric
+system, and converting between measurement systems and currencies.
+\end{abstract}
+\maketitle
+
+\section*{Units}
+
+Today we will be discussing units and converting between units. In particular, we
+will see how they can be useful in doing calculations, be helpful in determining
+\emph{what} calculation to do, and how we can use them to show and explain our work.
+
+You will probably want to have your Unit Conversion Sheet available as you work
+through today's material.
+
+\subsection*{Converting by writing units as fractions}
+
+Let's begin by revisiting a problem from your pre-class work. Hopefully you were able
+to determine the correct answer, but now we will complete it by writing out the units
+as fractions in order to convert from one unit to the other.
+
+\begin{example}
+How many tablespoons are in a gallon?
+
+We know the following equivalences:
+\[
+\begin{array}{l}
+4 \text{ quarts} = 1 \text{ gallon} \\
+4 \text{ cups} = 1 \text{ quart} \\
+8 \text{ fl oz} = 1 \text{ cup} \\
+2 \text{ Tbs} = 1 \text{ fl oz}
+\end{array}
+\]
+
+Write each equivalence as a fraction, arranged so the unit you are leaving cancels:
+\[
+\begin{aligned}
+1 \cancel{\text{gal}} \cdot \frac{4 \cancel{\text{quarts}}}{1 \cancel{\text{gal}}}
+\cdot \frac{4 \cancel{\text{cups}}}{1 \cancel{\text{quart}}}
+\cdot \frac{8 \cancel{\text{fl oz}}}{1 \cancel{\text{cup}}}
+\cdot \frac{2 \text{ Tbs}}{1 \cancel{\text{fl oz}}}
+&= 4 \cdot 4 \cdot 8 \cdot 2 \text{ Tbs} \\
+&= 256 \text{ Tbs}.
+\end{aligned}
+\]
+\end{example}
+
+Now let's try a few other problems.
+
+\begin{problem}
+A typical bottle of wine holds about $24.5$ fl oz. How much is this in gallons?
+
+\begin{hint}
+Chain the equivalences in the other direction: fl oz $\to$ cups $\to$ quarts $\to$ gallons.
+\[
+24.5 \cancel{\text{fl oz}} \cdot \frac{1 \cancel{\text{cup}}}{8 \cancel{\text{fl oz}}}
+\cdot \frac{1 \cancel{\text{quart}}}{4 \cancel{\text{cups}}}
+\cdot \frac{1 \text{ gal}}{4 \cancel{\text{quarts}}}
+\]
+\end{hint}
+
+A bottle of wine holds about $\answer[tolerance=0.005]{0.19}$ gallons.
+
+\begin{solution}
+\[
+24.5 \cdot \frac{1}{8} \cdot \frac{1}{4} \cdot \frac{1}{4} \text{ gal}
+\approx 0.19 \text{ gal}.
+\]
+There is about $0.19$ gal in a typical bottle of wine.
+\end{solution}
+\end{problem}
+
+\begin{problem}
+A baby is born and weighs $8$ lbs $4$ oz. Write this as decimal pounds --- that is,
+as $8.\underline{\hphantom{00}}$ lbs rather than ``mixing'' pounds and ounces.
+
+The baby weighs $\answer{8.25}$ lbs.
+
+\begin{hint}
+There are $16$ oz in $1$ lb, so $4$ oz $= \frac{4}{16}$ lb.
+\end{hint}
+\end{problem}
+
+\begin{problem}
+``How many ounces are in a yard?'' Explain why this question does not make sense.
+
+\begin{freeResponse}
+\end{freeResponse}
+
+\begin{solution}
+A yard is a unit of \emph{length} and an ounce is a unit of \emph{weight}. They do
+not measure the same property, so there is no equivalence between them to convert with.
+\end{solution}
+\end{problem}
+
+\begin{problem}
+``How many feet are in an acre?'' Explain why this question does not make sense.
+
+\begin{freeResponse}
+\end{freeResponse}
+
+\begin{solution}
+A foot is a unit of \emph{length} (one dimension) and an acre is a unit of
+\emph{area} (two dimensions).
+\end{solution}
+\end{problem}
+
+\subsection*{Length, area, and volume are different properties}
+
+Let's talk a little more about the idea in the question above. It is important to
+note that feet, square feet, and cubic feet are all different units --- they are not
+measuring the same thing! Feet measure length (one dimension), square feet measure
+area (two dimensions), and cubic feet measure volume (three dimensions).
+
+We can convert between feet and inches, or feet and miles. Can we convert between
+square feet and square inches, or between cubic feet and cubic miles? To answer this
+we have to ask whether the pair of units measures the same property. If the answer is
+yes, then yes --- we can convert between them.
+
+\begin{problem}
+Do square feet, square inches, and square miles all measure the same property?
+\begin{multipleChoice}
+\choice[correct]{Yes --- they all measure area.}
+\choice{No --- they measure different properties.}
+\end{multipleChoice}
+
+Do cubic feet, cubic inches, and cubic miles all measure the same property?
+\begin{multipleChoice}
+\choice[correct]{Yes --- they all measure volume.}
+\choice{No --- they measure different properties.}
+\end{multipleChoice}
+\end{problem}
+
+In order to convert between units we need some sort of equivalence. Just like knowing
+$4$ quarts $= 1$ gallon or $16$ oz $= 1$ pound, these are equivalences we can use to
+convert in either direction.
+
+\begin{example}
+One \emph{square inch} is the area of a square that is $1$ inch tall and $1$ inch wide.
+
+\begin{center}
+\includegraphics[width=1.5in]{units/units-fig1}
+\end{center}
+
+So a rectangle that is $3$ inches by $4$ inches has area
+\[
+3 \text{ in} \cdot 4 \text{ in} = 3 \cdot 4 \text{ square inches} = 12 \text{ square inches}.
+\]
+\end{example}
+
+Let's determine the equivalence between square feet and square inches. A square that
+is $1$ foot on each side is the same square as one that is $12$ inches on each side:
+
+\begin{center}
+\includegraphics[width=2.5in]{units/units-fig2}
+\qquad
+\includegraphics[width=2.5in]{units/units-fig3}
+\end{center}
+
+\begin{problem}
+Since the squares are exactly the same size,
+\[
+1 \text{ sq ft} = \answer{144} \text{ sq in}.
+\]
+
+\begin{hint}
+$12 \text{ in} \cdot 12 \text{ in} = 12 \cdot 12$ square inches.
+\end{hint}
+
+Use the same reasoning to determine the equivalence between square miles and square
+feet. Recall that $1$ mile $= 5280$ feet.
+\[
+1 \text{ sq mi} = \answer{27878400} \text{ sq ft}.
+\]
+
+\begin{solution}
+$5280 \cdot 5280 = 27{,}878{,}400$ square feet.
+\end{solution}
+\end{problem}
+
+The same reasoning extends to three dimensions, where a cube $1$ unit on a side gives
+us the cubic unit:
+
+\begin{center}
+\includegraphics[width=1.2in]{units/units-fig4}
+\end{center}
+
+\subsection*{The metric system}
+
+Now let's also visit units in the Metric System. You should have had some practice
+with these in your pre-class work; let's do a few more together.
+
+\begin{example}
+How many decigrams are in a hectogram?
+\[
+\begin{aligned}
+1 \cancel{\text{hg}} \cdot \frac{100 \cancel{\text{g}}}{1 \cancel{\text{hg}}}
+\cdot \frac{10 \text{ dg}}{1 \cancel{\text{g}}}
+&= 100 \cdot 10 \text{ dg} \\
+&= 1000 \text{ dg}.
+\end{aligned}
+\]
+\end{example}
+
+\begin{problem}
+$27.3$ kilograms is how many hectograms?
+\[
+27.3 \text{ kg} = \answer{273} \text{ hg}.
+\]
+
+\begin{solution}
+\[
+27.3 \cancel{\text{kg}} \cdot \frac{1000 \cancel{\text{g}}}{1 \cancel{\text{kg}}}
+\cdot \frac{1 \text{ hg}}{100 \cancel{\text{g}}} = 273 \text{ hg}.
+\]
+\end{solution}
+\end{problem}
+
+\begin{problem}
+``How many decimeters are in a dekaliter?'' Explain why this question does not make sense.
+
+\begin{freeResponse}
+\end{freeResponse}
+
+\begin{solution}
+A decimeter measures length; a dekaliter measures volume. Different properties, so
+there is no conversion between them.
+\end{solution}
+\end{problem}
+
+\begin{problem}
+Do you notice any patterns in your conversion values?
+
+\begin{freeResponse}
+\end{freeResponse}
+
+\begin{solution}
+Every metric conversion factor is a power of $10$, so converting only moves the
+decimal point. The prefixes tell you how far: kilo ($1000$), hecto ($100$),
+deka ($10$), deci ($1/10$), centi ($1/100$), milli ($1/1000$).
+\end{solution}
+\end{problem}
+
+\subsection*{Converting between systems}
+
+Notice that asking how many feet are in a meter is \emph{not} a nonsense question,
+because both measure length. Since inches, feet, miles, and meters all measure
+length, there must be some way of converting between the two systems: $5$ feet must
+be some number of meters, and $20$ meters must be some number of feet.
+
+To do such conversions we need conversion factors --- equivalences between the
+systems. Here is a list of some:
+\[
+\begin{array}{l}
+1 \text{ inch} = 2.54 \text{ cm} \quad\text{and}\quad 1 \text{ cm} = 0.394 \text{ inches} \\
+1 \text{ foot} = 0.3048 \text{ m} \quad\text{and}\quad 1 \text{ m} = 3.281 \text{ feet} \\
+1 \text{ mile} = 1.609 \text{ km} \quad\text{and}\quad 1 \text{ km} = 0.621 \text{ miles} \\
+1 \text{ fl oz} = 29.57 \text{ mL} \quad\text{and}\quad 1 \text{ mL} = 0.338 \text{ fl oz} \\
+1 \text{ gal} = 3.785 \text{ L} \quad\text{and}\quad 1 \text{ L} = 0.264 \text{ gal} \\
+1 \text{ lbs} = 0.454 \text{ kg} \quad\text{and}\quad 1 \text{ kg} = 2.205 \text{ lbs}
+\end{array}
+\]
+
+\begin{problem}
+Convert your own height into cm (or into inches, if you know your height in cm).
+Show the conversion as a chain of fractions.
+
+\begin{freeResponse}
+\end{freeResponse}
+\end{problem}
+
+\begin{problem}
+You have a $43$ lbs (adorable) dog! How much does it weigh in kg?
+\[
+43 \text{ lbs} \approx \answer[tolerance=0.05]{19.5} \text{ kg}.
+\]
+
+\begin{solution}
+\[
+43 \cancel{\text{lbs}} \cdot \frac{1 \text{ kg}}{2.205 \cancel{\text{lbs}}}
+\approx 19.5 \text{ kg}.
+\]
+\end{solution}
+\end{problem}
+
+\begin{problem}
+$5$k races are a popular length. How far is a $5$k in miles?
+\[
+5 \text{ km} \approx \answer[tolerance=0.01]{3.105} \text{ miles}.
+\]
+
+\begin{hint}
+Use $1 \text{ km} = 0.621$ miles.
+\end{hint}
+\end{problem}
+
+\begin{problem}
+In the U.S.\ we sell gas by the gallon, but most other countries sell and price it by
+the liter.
+
+\begin{prompt}
+\textbf{(a)} If you have a $15.4$ gal tank, how many liters is that?
+\[
+15.4 \text{ gal} \approx \answer[tolerance=0.05]{58.3} \text{ L}.
+\]
+\end{prompt}
+
+\begin{prompt}
+\textbf{(b)} Suppose gas here in Columbus is about $\$2.89$ a gallon. How much would
+it cost to fill up the $15.4$ gal tank?
+\[
+\$\answer[tolerance=0.01]{44.51}.
+\]
+\end{prompt}
+
+\begin{prompt}
+\textbf{(c)} Suppose gas in Hamilton, Canada (near Toronto) costs about $\$0.88$
+\emph{US dollars} per liter. How much would it cost to fill up the $15.4$ gal tank?
+\[
+\$\answer[tolerance=0.05]{51.30}.
+\]
+\end{prompt}
+
+\begin{solution}
+\[
+15.4 \cancel{\text{gal}} \cdot \frac{3.785 \cancel{\text{L}}}{1 \cancel{\text{gal}}}
+\cdot \frac{\$0.88}{1 \cancel{\text{L}}} \approx \$51.30,
+\]
+so it should cost about $\$51.30$ to fill up the tank.
+\end{solution}
+
+\begin{prompt}
+\textbf{(d)} Explain why in part (c) we needed the Canadian price in US dollars in
+order to make a fair comparison.
+\begin{freeResponse}
+\end{freeResponse}
+\end{prompt}
+\end{problem}
+
+\subsection*{Currency is a unit conversion too}
+
+Converting between currencies (such as US and Canadian dollars) is really the same as
+a unit conversion --- hence the shared vocabulary, ``converting currency.'' Once you
+have an equivalence between the currencies, you can convert one to the other.
+
+\begin{problem}
+If $\$1$ CA $= \$0.76$ US, how much does the liter of gas in Hamilton, Canada cost in
+Canadian dollars?
+\[
+\$\answer[tolerance=0.01]{1.16} \text{ CA per liter}.
+\]
+
+\begin{solution}
+\[
+\frac{\$0.88 \text{ US}}{1 \text{ L}} \cdot
+\frac{\$1 \text{ CA}}{\$0.76 \text{ US}} \approx \frac{\$1.16 \text{ CA}}{1 \text{ L}}.
+\]
+\end{solution}
+\end{problem}
+
+Looking at the price of gas in the UK (and other parts of Europe), it may seem like
+they have very cheap gas --- after all, $\$2.89$ is a larger number than
+$\pounds 1.26$.
+
+\begin{problem}
+Calculate how much $\pounds 1.26$ per liter would be in US dollars per gallon. You
+will need to look up the current conversion rate between US dollars and the British
+pound.
+
+\begin{freeResponse}
+\end{freeResponse}
+
+\begin{solution}
+Convert liters to gallons and pounds to dollars in one chain:
+\[
+\frac{\pounds 1.26}{1 \cancel{\text{L}}} \cdot
+\frac{3.785 \cancel{\text{L}}}{1 \text{ gal}} \cdot
+\frac{\$\,?\ \text{US}}{\pounds 1}.
+\]
+At an exchange rate near $\pounds 1 = \$1.27$ US this is roughly $\$6.06$ per gallon
+--- more than twice the Columbus price, not less.
+\end{solution}
+\end{problem}
+
+\end{document}

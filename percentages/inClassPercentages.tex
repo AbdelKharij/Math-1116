@@ -1,0 +1,289 @@
+\documentclass[12pt]{ximera}
+\input{../xmPreamble}
+\title{In-Class: Percentages}
+\begin{document}
+\begin{abstract}
+Percentages as relative comparisons: percent increase and decrease, flat taxes
+expressed as percentages, and several situations where percentages are commonly
+misinterpreted --- comparing percentages of different wholes, and chaining percent
+changes.
+\end{abstract}
+\maketitle
+
+\section*{Percentages}
+
+A very common use of percentages is as a \emph{relative comparison} value. Using
+percents this way can put value changes in perspective. For example, if the price of
+something increases from \$0.50 to \$1, that is ``only'' an absolute increase of
+\$0.50, which may not seem like much --- but that is a relative increase of $100\%$!
+Similarly, if a construction project goes \$10,000 over budget, that may initially
+seem like a lot, but if the original budget was \$1 million then they only went $1\%$
+over budget.
+
+Let's look at a few problems which use percentages to make relative comparisons.
+
+\subsection*{Section 1: Percent change}
+
+The recipe throughout is the same two steps:
+\begin{enumerate}
+\item Find the \emph{absolute} change: new value $-$ original value.
+\item Express that absolute change as a percentage \emph{of the original value}.
+\end{enumerate}
+
+\begin{example}
+Target increased the price of their Cheerios from \$2.99 to \$3.64. By what percent
+did they increase the price?
+
+Absolute price change: $\$3.64 - \$2.99 = \$0.65$.
+
+What is the absolute change as a percentage of the original price? That is, \$0.65 is
+what percent of the original price? So $\$0.65 = x \cdot \$2.99$, where $x$ is the
+unknown percentage. Solving,
+\[
+x = \frac{\$0.65}{\$2.99} \approx 0.21739,
+\]
+and $0.21739 \cdot 100 \approx 21.74$, so the price increased by $21.74\%$.
+\end{example}
+
+\begin{problem}
+Back in 2016, a company which sells EpiPens decided to boost the prices. In a very
+short period of time, the price of a pair of EpiPens increased from about \$115 to
+about \$610. What was the percent increase in the price?
+
+The absolute change in price is $\$\answer{495}$, which is a
+$\answer[tolerance=0.5]{430.4}\%$ increase.
+
+\begin{solution}
+The absolute change is $\$610 - \$115 = \$495$. Now express it as a percent of the
+original price: $\$495 = x \cdot \$115$, so
+\[
+x = \frac{\$495}{\$115} \approx 4.304,
+\]
+which is $430.4\%$. So the price increase from \$115 to \$610 is a $430.4\%$ increase.
+\end{solution}
+\end{problem}
+
+\begin{problem}
+The tax on gasoline has been $18.4$ cents per gallon since 1993, the last tax
+increase. In 1993 a gallon of gas cost about \$1.16 (including the tax). In 2011 gas
+was about \$3.40 per gallon (still including the tax).
+
+\begin{prompt}
+\textbf{(a)} What are the 1993 and 2011 costs per gallon \emph{not} including tax?
+
+1993: $\$\answer{0.976}$ \qquad 2011: $\$\answer{3.216}$
+
+\begin{hint}
+$18.4$ cents $= \$0.184$. Subtract this tax off in each year.
+\end{hint}
+\end{prompt}
+
+\begin{prompt}
+\textbf{(b)} What is the $18.4$ cents as a percent tax in 1993?
+$\answer[tolerance=0.05]{18.85}\%$
+
+\begin{solution}
+Express \$0.184 as a percentage of the untaxed 1993 cost:
+$\$0.184 = x \cdot \$0.976$ gives $x = \frac{\$0.184}{\$0.976} \approx 0.18852$,
+which is about $18.85\%$.
+\end{solution}
+\end{prompt}
+
+\begin{prompt}
+\textbf{(c)} What is the $18.4$ cents as a percent tax in 2011?
+$\answer[tolerance=0.05]{5.72}\%$
+
+\begin{solution}
+Same argument, but with the untaxed 2011 cost:
+$\$0.184 = x \cdot \$3.216$ gives $x = \frac{\$0.184}{\$3.216} \approx 0.0572$,
+which is about $5.72\%$.
+
+The flat tax has not changed at all, but as a share of the price it has shrunk
+dramatically.
+\end{solution}
+\end{prompt}
+
+\begin{prompt}
+\textbf{(d)} How much would the 2011 gallon of gas cost if, instead of a flat rate of
+$18.4$ cents per gallon, the tax were the same \emph{percent} tax you calculated for
+1993?
+
+$\$\answer[tolerance=0.02]{3.82}$ per gallon.
+
+\begin{solution}
+The untaxed 2011 cost is \$3.216 and the 1993 percent tax is $18.85\%$, so the tax
+would be $0.1885 \cdot \$3.216 \approx \$0.606$. The cost with tax included would be
+$\$3.216 + \$0.606 = \$3.822$, about \$3.82 per gallon.
+\end{solution}
+\end{prompt}
+
+\begin{prompt}
+\textbf{(e)} What was the percent increase in gas prices from 1993 to 2011?
+$\answer[tolerance=0.5]{193.1}\%$
+
+Should you include the tax to calculate this percent change? Why or why not?
+\begin{freeResponse}
+\end{freeResponse}
+
+\begin{solution}
+Looking at the overall price with tax included, the absolute change is
+$\$3.40 - \$1.16 = \$2.24$. As a percentage of the original cost,
+$\$2.24 = x \cdot \$1.16$, so $x = \frac{\$2.24}{\$1.16} \approx 1.931$, about
+$193.1\%$. So there is a $193.1\%$ increase in gas prices from 1993 to 2011.
+\end{solution}
+\end{prompt}
+\end{problem}
+
+\subsection*{Section 2: Percentages that get misread}
+
+Below are some situations involving percentages that are often incorrectly
+interpreted. Let's work through these problems (hopefully correctly) and reflect on
+what mistaken interpretations may come up.
+
+\begin{problem}
+A newspaper headline claims: ``Apple spends far less on R\&D than any of its rivals.''
+Further into the story, the reporter writes that Apple spends a paltry $2\%$ of
+revenues compared with $14\%$ at Google and Microsoft.
+
+\begin{prompt}
+\textbf{(a)} Give example numbers where $2\%$ of some amount is actually larger than
+$14\%$ of another amount. (You answered this in your pre-class work --- see what the
+others in your group used.)
+\begin{freeResponse}
+\end{freeResponse}
+\end{prompt}
+
+\begin{prompt}
+\textbf{(b)} Why can we not say that the $2\%$ in this situation is definitely less
+than the $14\%$?
+\begin{freeResponse}
+\end{freeResponse}
+\end{prompt}
+
+\begin{prompt}
+\textbf{(c)} Let Apple's revenue be $A$ and Google's revenue be $G$.
+
+\textbf{i.} Write how you would calculate $2\%$ of $A$.
+\begin{freeResponse}
+\end{freeResponse}
+
+\textbf{ii.} Write how you would calculate $14\%$ of $G$.
+\begin{freeResponse}
+\end{freeResponse}
+
+\textbf{iii.} How much larger can Apple's revenue be while $2\%$ of it is still more
+than $14\%$ of Google's revenue? (Hint: set up an inequality using parts i and ii.)
+\begin{freeResponse}
+\end{freeResponse}
+
+\textbf{iv.} Would $2\%$ of Apple's 2017 revenue be more than $14\%$ of Google's 2017
+revenue? Look it up!
+\begin{freeResponse}
+\end{freeResponse}
+
+\begin{solution}
+From $0.02A > 0.14G$ we get $A > 7G$: Apple's revenue would have to be more than
+seven times Google's for the comparison to flip.
+\end{solution}
+\end{prompt}
+\end{problem}
+
+\begin{problem}
+A shop owner raises the price of a \$100 pair of shoes by $50\%$. After a few weeks,
+because of falling sales, the owner reduces the price of the shoes by $50\%$.
+
+\begin{prompt}
+\textbf{(a)} What is the new price of the shoes, after both percent changes?
+$\$\answer{75}$
+
+\begin{solution}
+Increase: $\$100 + 0.50 \cdot \$100 = \$150$.
+Decrease: $\$150 - 0.50 \cdot \$150 = \$150 - \$75 = \$75$.
+\end{solution}
+\end{prompt}
+
+\begin{prompt}
+\textbf{(b)} Why are the shoes not back at the \$100 price? Don't say something like
+``because of the math above'' --- try to explain why the math doesn't return the
+original amount.
+\begin{freeResponse}
+\end{freeResponse}
+
+\begin{solution}
+The $50\%$ decrease is $50\%$ of the \emph{current} price, \$150, while the original
+$50\%$ increase was $50\%$ of the \emph{original} price, \$100. Percentages are
+relative --- it matters what whole you are taking the percentage of.
+\end{solution}
+\end{prompt}
+
+\begin{prompt}
+\textbf{(c)} How much would the shop owner have to decrease the price in order to
+have the shoes back at \$100 after the $50\%$ increase?
+$\answer[tolerance=0.05]{33.33}\%$
+
+\begin{solution}
+After the increase the price is \$150, and we need to come down by \$50. Express \$50
+as a percentage of the current price: $\$50 = x \cdot \$150$, so
+$x = \frac{50}{150} = 0.333\ldots$, about $33.33\%$.
+\end{solution}
+\end{prompt}
+\end{problem}
+
+\begin{problem}
+The annual number of burglaries in a town rose by $40\%$ in 2012 and fell by $30\%$
+in 2013.
+
+\begin{prompt}
+\textbf{(a)} What was the total percent change in burglaries over the two years?
+
+First try the problem with a specific starting number. In your group, pick a 3-digit
+number that does NOT end in $0$ --- say $355$ burglaries in 2011 --- and find the
+percent change. Then think about how to do the problem without knowing a specific
+starting number.
+
+Starting from $355$: there were $\answer{497}$ burglaries in 2012 and about
+$\answer[tolerance=1]{348}$ in 2013, an overall
+$\answer[tolerance=0.05]{1.97}\%$ decrease.
+
+\begin{solution}
+2012: $355 + 0.40 \cdot 355 = 355 + 142 = 497$ burglaries.
+
+2013: $497 - 0.30 \cdot 497 \approx 348$ burglaries.
+
+Compare original to final. Absolute change: $355 - 348 = 7$. Now $7$ is what percent
+of the original? $7 = x \cdot 355$, so $x = \frac{7}{355} \approx 0.0197$, about
+$1.97\%$. So there is a $1.97\%$ \emph{decrease} in burglaries from 2011 to 2013.
+
+Without a specific starting number: a $40\%$ rise then a $30\%$ fall multiplies the
+original by $1.40 \cdot 0.70 = 0.98$ --- a $2\%$ decrease regardless of where you
+start.
+\end{solution}
+\end{prompt}
+
+\begin{prompt}
+\textbf{(b)} It might be tempting to say the change over the two years was a $10\%$
+increase. Why might someone think that --- how do you get $10\%$ from the numbers in
+the problem?
+\begin{freeResponse}
+\end{freeResponse}
+
+\begin{solution}
+Someone might simply compute $40\% - 30\% = 10\%$.
+\end{solution}
+\end{prompt}
+
+\begin{prompt}
+\textbf{(c)} Why is $10\%$ incorrect?
+\begin{freeResponse}
+\end{freeResponse}
+
+\begin{solution}
+The $40\%$ and the $30\%$ are applied to different quantities --- they are
+proportions of different wholes. The $40\%$ is $40\%$ of the 2011 burglary count,
+while the $30\%$ is $30\%$ of the 2012 count. Since the percentages are relative to
+different values, we cannot subtract them or compare them directly.
+\end{solution}
+\end{prompt}
+\end{problem}
+
+\end{document}

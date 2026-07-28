@@ -1,0 +1,347 @@
+\documentclass[12pt]{ximera}
+\input{../xmPreamble}
+\title{In-Class: Linear Functions and Models}
+\begin{document}
+\begin{abstract}
+Building and interpreting linear models in context: slope-intercept form, what the
+slope and intercept mean (and what units they carry), electricity billing, comparing
+the cost of a conventional and a hybrid car, and reading a linear regression line
+relating ulna length to height.
+\end{abstract}
+\maketitle
+
+\section*{Lines in slope-intercept form}
+
+\[
+y = \underbrace{m}_{\text{slope}} x + \underbrace{b}_{y\text{-intercept}}
+\]
+
+\[
+\text{slope} = \frac{\text{rise}}{\text{run}}
+= \frac{\text{change in } y\text{-values}}{\text{change in } x\text{-values}}
+\]
+
+If we increase the $x$-value by $1$, then the $y$-value increases by $m$.
+
+The \textbf{$y$-intercept} is, graphically, the $y$-coordinate of the point where the
+line intersects the $y$-axis. The \textbf{$x$-intercept} is the $x$-coordinate of the
+point where the line intersects the $x$-axis.
+
+We're going to revisit some problems from your pre-class work, and the goal today is
+to understand and interpret these functions \emph{in the context of the problems}.
+
+\subsection*{A wedding budget}
+
+\begin{problem}
+Your friends are trying to get an idea of how many people they can invite to their
+wedding. The venue they're looking at costs about \$2,000 to rent, and the event
+coordinator suggested they budget about \$100 per attendee.
+
+\begin{prompt}
+\textbf{(a)} From your pre-class work, record your function for this problem. Let $x$
+be the number of attendees and $y$ the total cost in dollars.
+\[
+y = \answer{100} x + \answer{2000}
+\]
+
+\begin{solution}
+With units made explicit:
+\[
+\$y = \frac{\$100}{\text{attendee}} \cdot x \text{ attendees} + \$2000.
+\]
+\end{solution}
+\end{prompt}
+
+\begin{prompt}
+\textbf{(b)} What is the ``$b$-value'' in your equation? What does it mean in this
+context?
+
+$b = \$\answer{2000}$
+
+\begin{freeResponse}
+\end{freeResponse}
+
+\begin{solution}
+The $b$-value is the $y$-intercept. Algebraically it is the $y$-value when $x = 0$;
+graphically it is where the line crosses the $y$-axis. In this context: when the
+number of attendees is $0$, the cost of the wedding is still \$2000 --- the venue
+rental.
+\end{solution}
+\end{prompt}
+
+\begin{prompt}
+\textbf{(c)} What is the ``$m$-value'' in your equation?
+$m = \$\answer{100}$ per attendee.
+
+\textbf{i.} What are the units of the $m$-value? Explain why it makes sense that the
+$m$-value has these units, based on the units of $x$ and $y$.
+\begin{freeResponse}
+\end{freeResponse}
+
+\textbf{ii.} What does this $m$-value mean in this context?
+\begin{freeResponse}
+\end{freeResponse}
+
+\begin{solution}
+Since $\text{slope} = \frac{\text{change in } y}{\text{change in } x}$, the units of
+$m$ are always $\frac{\text{units of } y}{\text{units of } x}$ --- here, dollars per
+attendee.
+
+Mathematically, increasing the input $x$ by $1$ increases the output $y$ by $100$. In
+context: each additional attendee adds \$100 to the cost of the wedding.
+\end{solution}
+\end{prompt}
+\end{problem}
+
+\subsection*{Electricity billing}
+
+\begin{problem}
+Below is some information for how electricity usage is billed in Columbus. See
+\href{https://www.columbus.gov/}{columbus.gov} for the Schedule A and Schedule A-1
+rate information.
+
+% TODO: the rate-schedule image did not survive the PDF conversion (the source file
+% was a broken-image placeholder). Re-capture the Schedule A / A-1 table from the
+% original worksheet and place it in xmPictures/linearModels/.
+
+\begin{prompt}
+\textbf{(a)} In your pre-class work you determined how much it would cost to use
+700 KWH using both Schedule A and Schedule A-1. Record that information here.
+\begin{freeResponse}
+\end{freeResponse}
+\end{prompt}
+
+\begin{prompt}
+\textbf{(b)} Effectively, about how much does the 700th KWH cost? Why?
+\begin{freeResponse}
+\end{freeResponse}
+\end{prompt}
+
+\begin{prompt}
+\textbf{(c)} Explain why, based on this information, there cannot be a monthly bill
+for \$65.
+\begin{freeResponse}
+\end{freeResponse}
+\end{prompt}
+\end{problem}
+
+\subsection*{Comparing two cars}
+
+\begin{problem}
+According to \href{http://www.truecar.com}{TrueCar}, a 2018 Toyota Camry
+(conventional, 29/41 MPG city/hwy) sells for an average of \$22,030, and a Camry
+Hybrid (51/53 MPG city/hwy) sells for an average of \$26,247. Let's estimate gas at
+about \$2.80 per gallon.
+
+\begin{prompt}
+\textbf{(a)} From your pre-class work, record your functions for driving each car $x$
+miles. Average the city and highway MPG for each vehicle.
+
+Conventional: $y = \answer[tolerance=0.005]{0.08} x + \answer{22030}$
+
+Hybrid: $y = \answer[tolerance=0.005]{0.054} x + \answer{26247}$
+
+\begin{hint}
+Think about units. $x$ is in miles and $y$ is in dollars, so $m$ must have units of
+$\frac{\$}{\text{mile}}$. You are given $\frac{\text{miles}}{\text{gallon}}$ and
+$\frac{\$}{\text{gallon}}$ --- how do you combine them to get $\frac{\$}{\text{mile}}$?
+\end{hint}
+
+\begin{solution}
+Conventional: average the MPG, $\frac{29 + 41}{2} = 35$ mi/gal. Then
+\[
+\frac{\$2.80}{1 \cancel{\text{gal}}} \cdot \frac{1 \cancel{\text{gal}}}{35 \text{ miles}}
+= \frac{\$0.08}{\text{mile}},
+\]
+so $m = \$0.08$ per mile and
+$\$y = \frac{\$0.08}{1 \text{ mile}} \cdot x \text{ miles} + \$22{,}030$.
+
+Hybrid: average $\frac{51 + 53}{2} = 52$ mi/gal, so
+$\frac{\$2.80}{52 \text{ miles}} \approx \frac{\$0.054}{\text{mile}}$, giving
+$y \approx 0.054x + 26{,}247$.
+\end{solution}
+\end{prompt}
+
+\begin{prompt}
+\textbf{(b)} What are the ``$b$-values'' in these expressions? What do they represent
+in this context?
+\begin{freeResponse}
+\end{freeResponse}
+
+\begin{solution}
+Conventional: $b = \$22{,}030$; hybrid: $b = \$26{,}247$. In context, when the miles
+driven is $0$ the cost is just the purchase price of the car.
+\end{solution}
+\end{prompt}
+
+\begin{prompt}
+\textbf{(c)} What are the ``$m$-values'' in these expressions --- write them with
+their units. What do they mean in this context?
+\begin{freeResponse}
+\end{freeResponse}
+
+\begin{solution}
+Conventional: $m = \frac{\$0.08}{\text{mile}}$; hybrid:
+$m \approx \frac{\$0.054}{\text{mile}}$. Each additional mile driven costs about
+8 cents in the conventional Camry and about 5.4 cents in the hybrid.
+\end{solution}
+\end{prompt}
+
+\begin{prompt}
+\textbf{(d)} What other factors could we be considering when comparing the ``costs''
+of these two vehicles?
+\begin{freeResponse}
+\end{freeResponse}
+\end{prompt}
+\end{problem}
+
+\subsection*{Ulna length and height}
+
+\begin{problem}
+In your pre-class work you measured your height and your ulna to the nearest 0.5 cm
+and entered that data into the shared spreadsheet linked in Carmen. Your instructor
+will use this data to create a scatterplot and a linear regression line. Using the
+class data, answer the following.
+
+\begin{prompt}
+\textbf{(a)} Record the linear regression line here. (A sample line from a previous
+class: $y = 1.9x + 118$. Use your own class's line if it differs.)
+\begin{freeResponse}
+\end{freeResponse}
+\end{prompt}
+
+\begin{prompt}
+\textbf{(b)} What is the value of the slope? What does it mean in terms of this
+context?
+\begin{freeResponse}
+\end{freeResponse}
+
+\begin{solution}
+The slope is $\frac{1.9 \text{ cm of height}}{1 \text{ cm of ulna}}$. According to the
+model, for every increase of 1 cm in ulna length, the model predicts an increase of
+1.9 cm in a person's height.
+\end{solution}
+\end{prompt}
+
+\begin{prompt}
+\textbf{(c)} What is the $y$-intercept value? What does it mean in this context? Does
+this value make sense in the real world --- why or why not?
+\begin{freeResponse}
+\end{freeResponse}
+
+\begin{solution}
+The $y$-intercept is 118 cm \emph{of height}. In context: when the ulna length is
+0 cm, the model predicts the person is 118 cm tall.
+
+Not really meaningful in the real world. An ulna length of 0 cm does not describe
+anyone, so the model says nothing useful there --- it is far outside the range of the
+data used to build it.
+\end{solution}
+\end{prompt}
+
+\begin{prompt}
+\textbf{(d)} Suppose someone's ulna bone is 24 cm long. According to the model
+$y = 1.9x + 118$, how tall is this person likely to be?
+$\answer[tolerance=0.05]{163.6}$ cm.
+
+\begin{solution}
+$y = 1.9(24) + 118 = 45.6 + 118 = 163.6$ cm.
+\end{solution}
+\end{prompt}
+
+\begin{prompt}
+\textbf{(e)} What is an acceptable amount for your model's height to be off by? Is
+off by 5 cm acceptable? Off by 10 cm? By 1 meter? Explain your decision.
+\begin{freeResponse}
+\end{freeResponse}
+\end{prompt}
+
+\begin{prompt}
+\textbf{(f)} Suppose someone is 170 cm tall. About how long is their ulna bone likely
+to be, according to the model?
+$\answer[tolerance=0.05]{27.37}$ cm.
+
+\begin{solution}
+\[
+170 = 1.9x + 118 \implies 52 = 1.9x \implies x = \frac{52}{1.9} \approx 27.37 \text{ cm}.
+\]
+Note that here we are given the output and solving for the input --- the reverse of
+part (d).
+\end{solution}
+\end{prompt}
+\end{problem}
+
+\subsection*{A scientific study}
+
+Researchers measured the ulna and height of many women to see whether there is a
+linear relationship between the two.
+
+% TODO: the scatterplot from the study is not in the converted source. Re-capture it
+% from the original worksheet and place it in xmPictures/linearModels/ --- problem 6
+% below cannot be answered without it.
+
+\begin{problem}
+The researchers decided the data does have a linear relationship, and found the
+trendline $y = 4.39x + 45.89$.
+
+\begin{prompt}
+\textbf{(a)} What does the $x$ value represent in this context?
+\begin{freeResponse}
+\end{freeResponse}
+
+\begin{solution}
+$x$ is the length of an individual's ulna, in cm.
+\end{solution}
+\end{prompt}
+
+\begin{prompt}
+\textbf{(b)} What does the $y$ value represent in this context?
+\begin{freeResponse}
+\end{freeResponse}
+
+\begin{solution}
+$y$ is the individual's height, in cm.
+\end{solution}
+\end{prompt}
+
+\begin{prompt}
+\textbf{(c)} What do we call the $4.39$ value in this function? What does it mean in
+terms of the context?
+\begin{freeResponse}
+\end{freeResponse}
+
+\begin{solution}
+It is the slope, $\frac{4.39 \text{ cm of height}}{1 \text{ cm of ulna}}$. According
+to the model, for every increase of 1 cm in ulna length, the model predicts an
+increase of 4.39 cm in a woman's height.
+\end{solution}
+\end{prompt}
+
+\begin{prompt}
+\textbf{(d)} What do we call the $45.89$ value? What does it mean in this context?
+\begin{freeResponse}
+\end{freeResponse}
+
+\begin{solution}
+It is the $y$-intercept. In context: when the ulna length is 0 cm, the model predicts
+a height of 45.89 cm. As before, this is outside any meaningful range of the data.
+\end{solution}
+\end{prompt}
+
+\begin{prompt}
+\textbf{(e)} The researchers specified that the resulting $y$-value from this
+trendline could be off by $\pm 7.03$. What does this mean in terms of this context?
+\begin{freeResponse}
+\end{freeResponse}
+\end{prompt}
+\end{problem}
+
+\begin{problem}
+Pick a data point that might describe an individual with ``proportionally short
+arms'' and circle it on the graph above. What are you looking for graphically, and why?
+
+\begin{freeResponse}
+\end{freeResponse}
+\end{problem}
+
+\end{document}
