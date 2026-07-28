@@ -1,8 +1,23 @@
 \typeout{Start loading xmPreamble.tex}%
 
-% Add here extra macro's that are loaded automatically by all documents of class 'ximera' or 'xourse' in this repo
+% Add here extra macro's that are loaded automatically by all documents of claas 'ximera' or 'xourse' in this repo
 
 %%
 %%  Example:
 %%
-% \newcommand{\R}{\mathbb{R}
+% \newcommand{\R}{\mathbb{R}}
+\usepackage{tikz}
+\usetikzlibrary{positioning, arrows.meta}
+\usepackage{multicol}
+\usepackage{enumitem}
+\usepackage{caption}
+\usepackage{amsmath}
+\usepackage{amsthm}
+
+%% NOTE: do NOT add \usepackage to individual activity .tex files.
+%% When a xourse inlines an activity it gobbles \documentclass and \input, but a bare
+%% \usepackage still executes -- after \begin{document} -- and errors out.
+%% All shared packages and macros belong here.
+%%
+%% ximera.cls already loads: amsmath, amssymb, amsthm, cancel, enumitem, graphicx,
+%% hyperref, listings, pgfplots, tikz, url, xcolor. No need to re-load those.
