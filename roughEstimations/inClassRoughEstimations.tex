@@ -76,6 +76,12 @@ Roughly how much money do you have to work with in total? State your assumption 
 who is contributing.
 
 \begin{freeResponse}
+It depends who you count. If the \$10 comes only from the $12$ guests, the budget is
+$12 \cdot \$10 = \$120$. If you and your roommate each pitch in as well, that is $14$
+people, so $14 \cdot \$10 = \$140$.
+
+State whichever assumption you made --- the point is that the assumption has to be
+written down, because the answer changes with it.
 \end{freeResponse}
 \end{problem}
 
@@ -84,6 +90,29 @@ Decide what you're going to get. List your order, estimate the total, and explai
 where you rounded.
 
 \begin{freeResponse}
+One possible order, rounding every price up to the nearest dollar as we go so the
+running total stays easy:
+
+\begin{center}
+\begin{tabular}{lrr}
+ & actual & rounded \\
+Tortilla chips & \$3.99 & \$4 \\
+Salsa & \$1.79 & \$2 \\
+Normal chips & \$2.99 & \$3 \\
+Cookies & \$4.99 & \$5 \\
+Veggie tray & \$14.99 & \$15 \\
+12-pack of soda & \$5.79 & \$6 \\
+$3 \times$ large pepperoni & \$40.47 & \$42 \\
+Breadsticks & \$4.99 & \$5 \\
+Delivery & \$2.49 & \$3 \\
+\end{tabular}
+\end{center}
+
+Rounded total: $4 + 2 + 3 + 5 + 15 + 6 + 42 + 5 + 3 = \$85$. Leaving room for a tip of
+about \$15 brings us to \$100, comfortably under budget either way.
+
+Since every price was rounded \emph{up}, this is an overestimate --- which is the safe
+direction when you are checking whether you can afford something.
 \end{freeResponse}
 \end{problem}
 
@@ -111,6 +140,15 @@ Roughly estimate how many instant messages \emph{you} send in a year. State your
 assumed daily rate.
 
 \begin{freeResponse}
+Your daily rate will differ from the example, but the structure is the same. Suppose
+you send about $40$ messages a day. Round $365$ days up to $400$ to keep the
+multiplication mental:
+\[
+\frac{40 \text{ texts}}{1 \cancel{\text{day}}}
+\cdot \frac{400 \cancel{\text{days}}}{1 \text{ year}}
+= 16{,}000 \text{ texts per year}.
+\]
+Rounding the number of days up makes this a slight overestimate.
 \end{freeResponse}
 \end{problem}
 
@@ -118,6 +156,15 @@ assumed daily rate.
 Roughly estimate how much time you spend watching TV or movies in a year.
 
 \begin{freeResponse}
+Suppose about $2$ hours a day. Rounding $365$ up to $400$ days:
+\[
+\frac{2 \text{ hrs}}{1 \cancel{\text{day}}}
+\cdot \frac{400 \cancel{\text{days}}}{1 \text{ year}}
+= 800 \text{ hours per year}.
+\]
+It is worth converting that into a unit you have a feel for:
+$800 \text{ hrs} \div 24 \approx 33$ days, so roughly a month of round-the-clock
+watching per year.
 \end{freeResponse}
 \end{problem}
 
@@ -144,6 +191,14 @@ Roughly estimate how much you spend on drinks (coffee, soda, tea, water, etc.) e
 month.
 
 \begin{freeResponse}
+Suppose a \$5 coffee four times a week, plus about \$10 a week on other drinks --- so
+roughly \$30 a week. Rounding a month up to $4$ weeks:
+\[
+\frac{\$30}{1 \cancel{\text{week}}} \cdot \frac{4 \cancel{\text{weeks}}}{1 \text{ month}}
+= \$120 \text{ per month}.
+\]
+A month is really closer to $4.3$ weeks, so this is a slight underestimate --- call it
+\$120 to \$130.
 \end{freeResponse}
 \end{problem}
 
@@ -189,6 +244,17 @@ Roughly estimate how many flights you think there are in the U.S. daily. Helpful
 piece of information: CMH (Columbus airport) averages about $140$ flights daily.
 
 \begin{freeResponse}
+Start from CMH and scale up. Columbus is a mid-sized airport, so use it as a typical
+one and estimate how many airports of that size the country has. Suppose about $500$
+airports with meaningful commercial traffic. Round $140$ down to $100$ to keep it
+mental:
+\[
+\frac{100 \text{ flights}}{1 \cancel{\text{airport}}} \cdot 500 \cancel{\text{airports}}
+= 50{,}000 \text{ flights a day}.
+\]
+Notice how much rests on the assumed number of airports --- that is the number worth
+arguing about with your group, not the arithmetic. Any answer in the tens of
+thousands is defensible.
 \end{freeResponse}
 \end{problem}
 
@@ -197,6 +263,17 @@ Roughly estimate how many smartphones you think are sold in the U.S. each month.
 There are about $325$ million people in the U.S.
 
 \begin{freeResponse}
+Round $325$ million up to $300$ million people --- actually down, which keeps the
+division easy. Not everyone owns a smartphone, but most do, so assume roughly $300$
+million phones in use. If people replace a phone about every $3$ years, that is every
+$36$ months, which we round to $30$:
+\[
+\frac{300{,}000{,}000 \text{ phones}}{30 \text{ months}}
+= 10{,}000{,}000 \text{ phones per month}.
+\]
+So roughly $10$ million a month. The replacement interval is the assumption doing the
+real work here --- if people keep phones $4$ years instead of $3$, the estimate drops
+by a quarter.
 \end{freeResponse}
 \end{problem}
 
@@ -208,6 +285,17 @@ Look back at the ``seconds alive'' and ``smartphones sold'' questions.
 even a rough estimate, but that still requires some calculation. Explain why you
 think this would be unreasonably low. Still no calculator --- use mental arithmetic.
 \begin{freeResponse}
+\textbf{Seconds alive.} One million seconds sounds enormous, but check it:
+$1{,}000{,}000 \div 60 \approx 17{,}000$ minutes, $\div 60 \approx 280$ hours,
+$\div 24 \approx 12$ days. A $20$ year old has been alive far longer than $12$ days,
+so a million is much too low.
+
+\textbf{Smartphones per month.} One thousand a month would mean roughly one phone for
+every $325{,}000$ people --- about one phone per month for a city the size of
+Cincinnati. Far too low.
+
+Note that in both cases the number only looks unreasonable \emph{after} you convert it
+into units you have intuition for. That conversion is the calculation.
 \end{freeResponse}
 \end{prompt}
 
@@ -215,6 +303,14 @@ think this would be unreasonably low. Still no calculator --- use mental arithme
 \textbf{(b)} For each, determine a number that would definitely be way too high for
 even a rough estimate. Explain why you think this would be unreasonably high.
 \begin{freeResponse}
+\textbf{Seconds alive.} One hundred billion seconds: a year is roughly
+$400 \cdot 25 \cdot 60 \cdot 60 \approx 36$ million seconds, so
+$100{,}000{,}000{,}000 \div 36{,}000{,}000 \approx 3000$ years. Nobody is $3000$ years
+old, so this is far too high.
+
+\textbf{Smartphones per month.} One hundred million a month would be $1.2$ billion a
+year, in a country of $325$ million people --- close to four new phones per person per
+year. Far too high.
 \end{freeResponse}
 \end{prompt}
 \end{problem}
