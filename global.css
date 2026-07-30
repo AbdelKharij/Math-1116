@@ -203,6 +203,24 @@ e.g. use "P1", "Problem 1", "Prob 1", "Exciting Problem 1", etc.
 }
 
 
+/* Figures
+ *
+ * tex4ht converts \includegraphics[width=Nin] at 72dpi and writes the resulting
+ * pixel count into BOTH the width and height attributes, so every figure renders
+ * as a square: units-fig4 is 422x172 naturally but came out 216x216. Letting the
+ * browser use the image's own dimensions restores the aspect ratio.
+ *
+ * Scoped to xmPictures so it cannot affect the ximeraServer's own logo/UI images.
+ * The PDF build is unaffected -- CSS does not apply there, so the \includegraphics
+ * widths still control the printed size.
+ */
+img[src*="xmPictures"] {
+	width: auto;
+	height: auto;
+	max-width: 100%;
+}
+
+
 /* Outcome Formatting */
 
 .outcomeContent {
