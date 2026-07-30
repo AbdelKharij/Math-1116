@@ -1,0 +1,387 @@
+\documentclass[12pt]{ximera}
+\input{../xmPreamble}
+\title{In-Class: Exponentials, Part 2}
+\begin{document}
+\begin{abstract}
+Converting between the two forms of an exponential model, $y = a \cdot e^{bx}$ and
+$y = a \cdot R^{x}$, using the class dice-rolling data --- and then building a
+theoretical model from probability alone and comparing the two.
+\end{abstract}
+\maketitle
+
+\section*{Some exponential rules}
+
+The rule we need throughout is
+\[
+\left(a^{b}\right)^{c} = a^{bc}.
+\]
+
+\begin{example}
+Take $a = 2$, $b = 2$, $c = 3$. Then $\left(2^{2}\right)^{3} = 2^{2 \cdot 3} = 2^{6}$.
+Checking the left side directly,
+\[
+\left(2^{2}\right)^{3} = 2^{2} \cdot 2^{2} \cdot 2^{2}
+= (2 \cdot 2)(2 \cdot 2)(2 \cdot 2) = 2^{6},
+\]
+so both sides agree.
+\end{example}
+
+\begin{example}
+Now take $a = e$, $b = 0.3$, $c = x$, where $e \approx 2.718$ is Euler's number.
+Using the same rule,
+\[
+e^{0.3 \cdot x} = \left(e^{0.3}\right)^{x} \approx (1.3499)^{x}.
+\]
+In general, given anything of the form $e^{bx}$, we can rewrite it as
+$\left(e^{b}\right)^{x}$.
+\end{example}
+
+Last week all of our exponential models were written as $y = a \cdot R^{x}$. But
+exponential models also come in the form $y = a \cdot e^{bx}$ --- and that second
+form is actually what most programs produce. The ``$e$'' is just a letter for a
+special irrational number: like $\pi = 3.14159\ldots$, we have
+$e = 2.71828\ldots$. Your scientific calculator has a button for it.
+
+\begin{problem}
+Suppose we have the model $y = 671 \cdot e^{0.3x}$. Rewrite it in $y = a \cdot R^{x}$
+form. Calculate the $\left(e^{b}\right)$-value rounded to \textbf{4 decimal places}.
+
+\[
+R = e^{0.3} = \answer[tolerance=0.0001]{1.3499},
+\qquad
+y = \answer{671} \cdot (1.3499)^{x}
+\]
+
+\begin{solution}
+$e^{0.3 \cdot x} = \left(e^{0.3}\right)^{x} = (1.3499)^{x}$, so
+$y = 671 \cdot e^{0.3x}$ can be written as $y = 671 \cdot (1.3499)^{x}$.
+\end{solution}
+\end{problem}
+
+\section*{The dice data}
+
+Models of the form $y = a \cdot e^{bx}$ are what Google Sheets produces for our dice
+data. Open the class dice data file you completed in your pre-class work; we will
+have it produce an exponential model for each of the $n$-sided dice datasets.
+
+\begin{quote}
+\textbf{Getting an exponential trendline in Google Sheets.} Select the data you want
+to graph, click the ``Insert'' menu, choose ``Charts,'' and a chart appears with an
+editing box on the right. At the top of that box is a drop-down to select the chart
+type --- scroll down and choose the scatter plot. You can adjust the horizontal and
+vertical ranges under ``Customize.''
+
+To get the trendline: click one of the data points, and the editing box will show a
+checkbox for ``trendline.'' Checking it produces a trendline and more options. It
+defaults to linear, so change the ``type'' to ``exponential.''
+
+To get the equation: in the options that open after checking ``trendline,'' there is
+a drop-down called ``Label.'' Select ``Use Equation'' to display the equation on the
+chart.
+\end{quote}
+
+For now let's focus on the 6-sided dice data.
+
+\begin{center}
+\begin{tabular}{|l|l|l|l|}
+\hline
+Dice & Model as $y = a \cdot e^{bx}$ & Model as $y = a \cdot R^{x}$ & Actual starting \# \\
+\hline
+6-sided & $y = 336 e^{-0.181x}$ & $y = 336 \cdot (0.834)^{x}$ & 325 \\
+\hline
+\end{tabular}
+\end{center}
+
+\[
+e^{-0.181 \cdot x} = \left(e^{-0.181}\right)^{x} \approx (0.834)^{x}
+\]
+
+\begin{problem}
+What does the $x$-value in our model represent?
+\begin{freeResponse}
+\end{freeResponse}
+\begin{solution}
+$x$ is the number of \textbf{rolls} that have occurred.
+\end{solution}
+\end{problem}
+
+\begin{problem}
+What does the $y$-value in our model represent?
+\begin{freeResponse}
+\end{freeResponse}
+\begin{solution}
+$y$ is the number of dice remaining after $x$ rolls.
+\end{solution}
+\end{problem}
+
+\begin{problem}
+The starting number of dice corresponds to $x = \answer{0}$. Use this and the model
+to determine the model's estimate for the starting number of dice.
+\[
+\answer{336} \text{ dice}
+\]
+
+\begin{solution}
+The starting number of dice is when no rolls have occurred, which is $x = 0$ since
+$x$ counts rolls.
+
+Given a model $y = a \cdot R^{x}$, when $x = 0$ we get
+$y = a \cdot R^{0} = a \cdot 1 = a$. So $a$ is always the model's value at $x = 0$.
+According to the model, the initial number of dice is $336$.
+\end{solution}
+\end{problem}
+
+\begin{problem}
+Why does the model's estimate not match our actual starting number of dice? (We
+actually started with 325; the model says 336.)
+
+\begin{freeResponse}
+\end{freeResponse}
+
+\begin{solution}
+The model comes from fitting an exponential curve to the data, and the data is not
+perfectly exponential --- we are only approximating the situation with an exponential
+model. The fit trades off accuracy at the start against accuracy elsewhere, so its
+$a$-value need not land exactly on the true starting count.
+\end{solution}
+\end{problem}
+
+\begin{problem}
+Plug $x = 8$ into the model $y = 336 e^{-0.181x}$. Explain what the $x$- and
+$y$-values mean in this context.
+
+$y \approx \answer[tolerance=1]{79}$ dice.
+
+\begin{freeResponse}
+\end{freeResponse}
+
+\begin{solution}
+When $x = 8$, $y = 336 \cdot e^{-0.181 \cdot 8} \approx 78.97$. So the model predicts
+there will be about 79 dice left after 8 rolls.
+\end{solution}
+\end{problem}
+
+\begin{problem}
+Using $e^{bx} = \left(e^{b}\right)^{x}$ and the numbers from the model, calculate the
+$\left(e^{b}\right)$-value, rounded to 4 decimal places, and write the model in the
+form $y = a \cdot R^{x}$.
+\[
+R = e^{-0.181} = \answer[tolerance=0.0001]{0.8344},
+\qquad
+y = \answer{336} \cdot (0.834)^{x}
+\]
+\end{problem}
+
+\begin{problem}
+Now plug $x = 8$ into the $y = a \cdot R^{x}$ model.
+\[
+y \approx \answer[tolerance=1]{79} \text{ dice}
+\]
+
+Did you get the same value as with the $y = a \cdot e^{bx}$ model? Should you have?
+Explain.
+
+\begin{freeResponse}
+\end{freeResponse}
+
+\begin{solution}
+$336 \cdot (0.834)^{8} = 78.644$, versus $78.97$ from the $e^{bx}$ form. Rounded to
+whole dice both give 79.
+
+They should agree, because the two forms are algebraically the same function --- we
+only rewrote $e^{-0.181}$ as $0.834$. The small difference comes entirely from
+rounding $e^{-0.181} = 0.8344\ldots$ down to $0.834$.
+\end{solution}
+\end{problem}
+
+\begin{problem}
+What should the $R$-value in the $y = a \cdot R^{x}$ model be representing in this
+context?
+
+\begin{freeResponse}
+\end{freeResponse}
+
+\begin{solution}
+The $R$-value tells us about the percent change in $y$ for an increase of 1 in $x$.
+For example, in the athlete's salary model $y = 8.3(1.048)^{x}$, $R = 1.048$ told us
+the salary increases by $4.8\%$ each year.
+
+Here the model is $y = 336 \cdot (0.834)^{x}$, so $R = 0.834$ --- note it is
+\emph{less} than 1. This means $83.4\%$ of the dice remain after each roll, on
+average. Equivalently, since $1 - 0.834 = 0.166$, we can write
+\[
+y = 336(1 - 0.166)^{x},
+\]
+which says we remove $16.6\%$ of the dice on each roll, on average.
+\end{solution}
+\end{problem}
+
+\subsection*{The other dice}
+
+Now let's look at the data for the other dice. Record your group's data:
+
+\begin{center}
+\begin{tabular}{|l|l|l|l|l|}
+\hline
+Dice & Model as $y = a \cdot e^{bx}$ & Actual starting \# & $R = e^{b}$ & Model as $y = a \cdot R^{x}$ \\
+\hline
+6-sided & $y = 336 e^{-0.181x}$ & 325 & $0.834$ & $y = 336 \cdot (0.834)^{x}$ \\
+\hline
+4-sided & $y = 264 e^{-0.315x}$ & 300 & $\answer[tolerance=0.005]{0.73}$ & $y = 264 \cdot (0.73)^{x}$ \\
+\hline
+8-sided & $y = 265 e^{-0.152x}$ & 260 & $\answer[tolerance=0.005]{0.86}$ & $y = 265 \cdot (0.86)^{x}$ \\
+\hline
+12-sided & $y = 161 e^{-0.0899x}$ & 165 & $\answer[tolerance=0.005]{0.914}$ & $y = 161 \cdot (0.914)^{x}$ \\
+\hline
+\end{tabular}
+\end{center}
+
+\begin{problem}
+What does the $x$-value represent for all of the models?
+\begin{freeResponse}
+\end{freeResponse}
+\begin{solution}
+$x$ is the number of \textbf{rolls} that have occurred.
+\end{solution}
+\end{problem}
+
+\begin{problem}
+What does the $y$-value represent for all of the models?
+\begin{freeResponse}
+\end{freeResponse}
+\begin{solution}
+$y$ is the number of dice that remains after $x$ rolls.
+\end{solution}
+\end{problem}
+
+\begin{problem}
+What does the $a$-value represent in all of the models?
+\begin{freeResponse}
+\end{freeResponse}
+\begin{solution}
+In $y = a \cdot R^{x}$, the value $a$ is the initial number of dice, as predicted by
+the model.
+\end{solution}
+\end{problem}
+
+\begin{problem}
+What does the $R$-value (which equals $e^{b}$) represent in all of the models?
+\begin{freeResponse}
+\end{freeResponse}
+\begin{solution}
+$R$ is the proportion of dice that remain after each roll, and $1 - R$ is the
+proportion removed after each roll.
+\end{solution}
+\end{problem}
+
+\section*{Theoretical exponential models}
+
+Excel and Google Sheets give models in the form $y = a \cdot e^{bx}$, and we rewrote
+them as $y = a \cdot R^{x}$ to see the connection to the context. But without rolling
+any dice at all, and without any special program, we could have built a very decent
+model ourselves. Let's see how.
+
+Do a thought experiment with 6-sided dice, following the same procedure as before: we
+roll the dice and remove any that come up ``1.''
+
+\begin{problem}
+Theoretically, what fraction of the dice should roll a ``1''?
+\[
+\answer{1/6}
+\]
+\begin{solution}
+Assuming each side is equally likely, there are six possibilities, so there is a 1 in
+6 chance of rolling a 1. We expect about 1 out of every 6 dice to roll a 1.
+\end{solution}
+\end{problem}
+
+\begin{problem}
+Theoretically, what fraction of the dice should \emph{not} roll a ``1''?
+\[
+\answer{5/6}
+\]
+\begin{solution}
+Since $1/6$ of the dice should roll a 1, we expect $5/6$ of the dice not to.
+\end{solution}
+\end{problem}
+
+\begin{problem}
+Suppose we start with the same number of 6-sided dice as your group's actual starting
+number: $325$.
+
+\begin{prompt}
+\textbf{(a)} In a theoretical model $y = a \cdot R^{x}$, which value does the
+starting number of dice go in for, and why?
+\begin{freeResponse}
+\end{freeResponse}
+\begin{solution}
+It is the $a$-value, since $a$ is the model's output when $x = 0$ --- before any
+rolls have happened.
+\end{solution}
+\end{prompt}
+
+\begin{prompt}
+\textbf{(b)} Which value should go in as the $R$-value, and why?
+\begin{freeResponse}
+\end{freeResponse}
+\begin{solution}
+$R = 5/6$, the proportion of dice we expect to survive each roll.
+\end{solution}
+\end{prompt}
+
+\begin{prompt}
+\textbf{(c)} Put these together to create the theoretical model for our 6-sided dice.
+\[
+y = \answer{325} \cdot \left(\answer{5/6}\right)^{x}
+\]
+\end{prompt}
+\end{problem}
+
+\begin{problem}
+Look back at the model the program produced for the 6-sided dice in its
+$y = a \cdot R^{x}$ form. Its $R$-value should be close to $0.8333\ldots$ --- why
+would we hope and expect that?
+
+\begin{freeResponse}
+\end{freeResponse}
+
+\begin{solution}
+Because $5/6 = 0.8333\ldots$ is the theoretical survival proportion. The program's
+$R$ came from the actual rolls, and if the dice are fair, the observed proportion
+surviving each roll should hover near the theoretical one. The program got $0.834$,
+which is very close indeed.
+\end{solution}
+\end{problem}
+
+\begin{problem}
+Compare the two models using the chart below. Fill in the ``actual'' column from your
+group's data, and round the model values to the nearest whole number.
+
+\begin{center}
+\begin{tabular}{|c|l|l|l|}
+\hline
+Roll & Actual \# remaining & Google Sheets model $336(0.834)^{x}$ & Theoretical model $325(5/6)^{x}$ \\
+\hline
+0 & & $\answer{336}$ & $\answer{325}$ \\
+\hline
+1 & & $\answer[tolerance=1]{280}$ & $\answer[tolerance=1]{271}$ \\
+\hline
+2 & & $\answer[tolerance=1]{234}$ & $\answer[tolerance=1]{226}$ \\
+\hline
+3 & & $\answer[tolerance=1]{195}$ & $\answer[tolerance=1]{188}$ \\
+\hline
+4 & & $\answer[tolerance=1]{163}$ & $\answer[tolerance=1]{157}$ \\
+\hline
+\end{tabular}
+\end{center}
+\end{problem}
+
+\begin{problem}
+How do these values compare? Which is better, the Google Sheets model or the
+theoretical model? Which would we \emph{expect} to be better, and why?
+
+\begin{freeResponse}
+\end{freeResponse}
+\end{problem}
+
+\end{document}

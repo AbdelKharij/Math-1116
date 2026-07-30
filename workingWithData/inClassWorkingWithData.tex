@@ -1,0 +1,366 @@
+\documentclass[12pt]{ximera}
+\input{../xmPreamble}
+\title{In-Class: Working with Data}
+\begin{document}
+\begin{abstract}
+Mean, median, and mode; why a mean of category means is not the overall mean; what a
+uniform percent raise does to each; reading percentiles; and using standard deviation
+and the empirical rule on normally distributed data.
+\end{abstract}
+\maketitle
+
+\section*{Mean, Median, and Mode}
+
+\begin{example}
+Consider the data set $2, 4, 6, 10, 13$.
+
+\textbf{Mean (average).}
+\[
+\frac{\text{sum of values}}{\text{number of values}}
+= \frac{2 + 4 + 6 + 10 + 13}{5} = \frac{35}{5} = 7.
+\]
+Note that rearranging this gives a fact we will use later:
+$\text{mean} \cdot (\text{\# of values}) = \text{sum of the data points}$.
+
+\textbf{Median.} First order the data from smallest to largest. If there is an odd
+number of data points, the median is the middle value; if there is an even number,
+there are two middle values, and these are averaged.
+
+Here the data is already ordered and there are an odd number of points, so the median
+is the middle value, $6$. Notice the median and the mean are \emph{not} equal.
+\end{example}
+
+\begin{example}
+Now consider $2, 4, 6, 10, 13, 20$. The data is ordered and there are an even number
+of points, so the two middle values are $6$ and $10$:
+\[
+\text{median} = \frac{6 + 10}{2} = \frac{16}{2} = 8.
+\]
+\end{example}
+
+\subsection*{The Wing Aero data}
+
+Let's return to the Wing Aero data from the pre-class work. Many companies keep
+salary information private, so this is an imagined example of a fictional company.
+
+% TODO: the Wing Aero salary table image is a broken-image placeholder in the source
+% PDF (page 2) -- the underlying salary data is not in the document. The values below
+% come from the instructor's worked answers. Request the original table; supplying it
+% as real data rather than a picture would be better for accessibility anyway.
+
+The company has $30$ employees, in four categories: $9$ workers, $9$ supervisors,
+$8$ managers, and $4$ executives.
+
+\begin{problem}
+Record your information from your pre-class work.
+
+Mean salary of all employees: \$$\answer[tolerance=0.05]{77.17}$k
+
+Mean salary by category --- Worker: \$$\answer[tolerance=0.05]{25.44}$k \quad
+Supervisor: \$$\answer[tolerance=0.05]{40.44}$k \quad
+Manager: \$$\answer[tolerance=0.05]{79.13}$k \quad
+Executive: \$$\answer[tolerance=0.05]{272.25}$k
+
+\begin{solution}
+Each mean is the sum of that group's salaries divided by how many are in the group:
+\[
+\frac{\text{sum of all salaries}}{30} = \$77.17\text{k},
+\qquad
+\frac{\text{sum of all worker salaries}}{9} = \$25.44\text{k}.
+\]
+\end{solution}
+\end{problem}
+
+\begin{problem}
+How could we use the mean category salaries and the number of employees in each
+category to determine the mean salary of all employees? Notice that you cannot simply
+add up the four category means and divide by 4 --- why doesn't that work?
+
+\begin{freeResponse}
+\end{freeResponse}
+
+\begin{solution}
+Rearranging the definition of a mean, $9 \cdot \$25.44\text{k}$ is the sum of all the
+worker salaries. Doing that for each category recovers the total payroll, and then
+\[
+\frac{9(\$25.44\text{k}) + 9(\$40.44\text{k}) + 8(\$79.13\text{k}) + 4(\$272.25\text{k})}{30}
+= \$77.17\text{k},
+\]
+the mean for all employees.
+
+Dividing the four category means by 4 doesn't work because it treats all four
+categories as equally common. They are not --- there are 9 workers but only 4
+executives. Averaging the means as if each carried the same weight would let the 4
+executives' very high mean pull the result far too high. This is called a
+\emph{weighted} mean: each category mean must be weighted by how many people it
+describes.
+\end{solution}
+\end{problem}
+
+\begin{problem}
+Record your information from your pre-class work.
+
+Median of all employees: \$$\answer[tolerance=0.05]{42.5}$k
+
+Median by category --- Worker: \$$\answer[tolerance=0.05]{25}$k \quad
+Supervisor: \$$\answer[tolerance=0.05]{42}$k \quad
+Manager: \$$\answer[tolerance=0.05]{79.5}$k \quad
+Executive: \$$\answer[tolerance=0.05]{270}$k
+\end{problem}
+
+\begin{problem}
+\textbf{DO NOT RECALCULATE.} If everyone gets a $2.75\%$ raise, what happens to the
+\emph{median} of each category? Will it go up or down, and by how much as a percent?
+
+The median goes up by $\answer[tolerance=0.01]{2.75}\%$.
+
+\begin{solution}
+Suppose we have data $a, b, c, d, e$ ordered from smallest to largest. The median is
+$c$. Increasing every value by $2.75\%$ gives
+\[
+1.0275a,\ 1.0275b,\ 1.0275c,\ 1.0275d,\ 1.0275e,
+\]
+which is still in order, so the new median is $1.0275c$ --- the median increased by
+$2.75\%$.
+
+The even case works the same way. For $a, b, c, d, e, f$ the median is
+$\frac{c+d}{2}$, and after the raise
+\[
+\frac{1.0275c + 1.0275d}{2} = 1.0275 \cdot \frac{c+d}{2}.
+\]
+So if every data point increases by $2.75\%$, the median increases by $2.75\%$.
+\end{solution}
+\end{problem}
+
+\begin{problem}
+\textbf{DO NOT RECALCULATE.} If everyone gets a $2.75\%$ raise, what happens to the
+\emph{mean} of each category?
+
+The mean goes up by $\answer[tolerance=0.01]{2.75}\%$.
+
+\begin{solution}
+For data $a, b, c, d, e$ the mean is $\frac{a+b+c+d+e}{5}$. Increasing each value by
+$2.75\%$ means replacing $a$ by $a + 0.0275a = 1.0275a$, and so on. The new mean is
+\[
+\frac{1.0275a + 1.0275b + 1.0275c + 1.0275d + 1.0275e}{5}
+= \frac{1.0275(a+b+c+d+e)}{5}
+= 1.0275 \cdot \text{original mean}.
+\]
+So the mean also increases by $2.75\%$. The common factor simply pulls out front ---
+which is why neither statistic required any recalculation.
+\end{solution}
+\end{problem}
+
+\section*{Percentiles}
+
+Below is information about 1-year-old males' weights.
+
+% TODO: the percentile table was a broken-image placeholder in the source PDF
+% (pages 6 and 10). The rows below were reconstructed from the percentile/weight
+% pairs quoted in the instructor's worked answers, so the table is PARTIAL -- it is
+% every pair the worked solutions happen to mention, not the full original. Request
+% the complete table.
+
+\begin{center}
+\begin{tabular}{|c|c|}
+\hline
+Weight & Percentile \\
+\hline
+19.5 lbs & 8.2nd \\
+\hline
+20.5 lbs & 17.5th \\
+\hline
+22.5 lbs & 46.5th \\
+\hline
+23.5 lbs & 61.8th \\
+\hline
+24.5 lbs & 74.9th \\
+\hline
+25.5 lbs & 84.8th \\
+\hline
+\end{tabular}
+\end{center}
+
+\begin{problem}
+$25.5$ lbs corresponds to the 84.8th percentile. What does that mean, and what
+percent of male 1-year-olds weigh \emph{more} than $25.5$ lbs?
+
+$\answer[tolerance=0.05]{15.2}\%$ weigh more than 25.5 lbs.
+
+\begin{solution}
+Being at the 84.8th percentile means $84.8\%$ of male 1-year-olds weigh the same or
+less than $25.5$ lbs. Equivalently, since $100 - 84.8 = 15.2$, about $15.2\%$ weigh
+more.
+\end{solution}
+\end{problem}
+
+\begin{problem}
+Remind yourself of the definition of the median. Based on that definition, what
+percentile is the median for \emph{any} data set?
+
+The $\answer{50}$th percentile.
+
+\begin{solution}
+The median is the middle value once the data is ordered, so half the data is the same
+or less than the median. That is exactly the 50th percentile.
+\end{solution}
+\end{problem}
+
+\begin{problem}
+Using your answer above, estimate the median weight from the table. How did you
+determine it?
+
+About $\answer[tolerance=0.3]{22.7}$ lbs.
+
+\begin{freeResponse}
+\end{freeResponse}
+
+\begin{solution}
+The table does not list a value for the 50th percentile. It lists the 46.5th
+percentile as $22.5$ lbs and the 61.8th as $23.5$ lbs, with nothing in between, so
+the 50th percentile is somewhere between $22.5$ and $23.5$ lbs. Since $46.5$ is much
+closer to $50$ than $61.8$ is, we estimate the 50th percentile at about $22.7$ lbs.
+\end{solution}
+\end{problem}
+
+\section*{Standard Deviation}
+
+Here is the image about standard deviation from the pre-class work.
+
+\begin{center}
+\includegraphics[width=4in]{workingWithData/normal-curve-percentiles}
+\end{center}
+
+\begin{problem}
+If about $68\%$ of the data is within 1 standard deviation of the mean, what percent
+lies \emph{outside} one standard deviation?
+\[
+\answer{32}\%
+\]
+
+\begin{prompt}
+Since the data within 1 standard deviation is the middle $68\%$, what percent of the
+data is \emph{above} one standard deviation above the mean?
+$\answer{16}\%$
+
+And what percent is \emph{below} one standard deviation below the mean?
+$\answer{16}\%$
+
+\begin{solution}
+$100\% - 68\% = 32\%$ lies outside. By symmetry that 32\% splits evenly between the
+two tails, so $16\%$ in each.
+\end{solution}
+\end{prompt}
+
+\begin{prompt}
+So an interval showing one standard deviation either side of the mean starts around
+the $\answer{16}$th percentile and ends around the $\answer{84}$th percentile.
+
+\begin{solution}
+The lower end has $16\%$ below it, putting it at the 16th percentile. The upper end
+has $16\%$ above it, so $100 - 16 = 84\%$ at or below it --- the 84th percentile.
+Equivalently $50\% - 34\% = 16\%$ and $50\% + 34\% = 84\%$.
+\end{solution}
+\end{prompt}
+\end{problem}
+
+\begin{problem}
+Looking at the baby weight table above, the middle $68\%$ of 1-year-old males'
+weights fall between about $\answer[tolerance=0.3]{20.3}$ lbs and
+$\answer[tolerance=0.3]{25.5}$ lbs. Assume the weights are normally distributed.
+
+\begin{hint}
+You want the 16th and 84th percentiles. Neither is listed exactly --- estimate each
+from the nearest listed percentiles, as you did for the median.
+\end{hint}
+
+\begin{solution}
+The 16th percentile is not listed, but the 8.2nd percentile is $19.5$ lbs and the
+17.5th is $20.5$ lbs, so the 16th must be between those weights. Since $17.5$ is much
+closer to $16$ than $8.2$ is, estimate the 16th percentile at about $20.3$ lbs.
+
+The 84th percentile is not listed either, but the 74.9th is $24.5$ lbs and the 84.8th
+is $25.5$ lbs, so the 84th lies between them. Since $84.8$ is very close to $84$,
+estimate the 84th percentile at about $25.5$ lbs.
+
+So the middle $68\%$ of 1-year-old males' weights fall between about $20.3$ lbs and
+$25.5$ lbs.
+\end{solution}
+\end{problem}
+
+\subsection*{Further practice}
+
+\begin{problem}
+The score on a standardized test for a certain year is modeled using a normal
+distribution. The mean is $76.5$ points and the standard deviation is $5.2$ points.
+In the figure, $V$ is a number along the axis under the highest part of the curve,
+and $U$ and $W$ are each the same distance away from $V$.
+
+% TODO: BLOCKED -- the normal-distribution figure for this problem is a broken-image
+% placeholder in the source PDF (page 11). Without it we cannot tell how much of the
+% region is shaded, so part (a) is unanswerable and part (b) depends on it. Both are
+% left ungraded pending the original figure.
+
+\begin{prompt}
+\textbf{(a)} Based on the empirical rule, how much of the data is in the shaded
+region of the figure?
+\begin{freeResponse}
+\end{freeResponse}
+\end{prompt}
+
+\begin{prompt}
+\textbf{(b)} Label $V$, $U$, and $W$ with their numerical values, based on the mean,
+the standard deviation, and your answer to part (a).
+\begin{freeResponse}
+\end{freeResponse}
+
+\begin{solution}
+$V$ is under the highest part of the curve, so $V = 76.5$, the mean, whatever the
+shading turns out to be.
+
+For $U$ and $W$, work outward from the mean in steps of $5.2$: one standard deviation
+gives $71.3$ and $81.7$ (containing $68\%$), two gives $66.1$ and $86.9$ ($95\%$),
+three gives $60.9$ and $92.1$ ($99.7\%$). Which pair is correct depends on the shaded
+region in part (a).
+\end{solution}
+\end{prompt}
+\end{problem}
+
+\begin{problem}
+Suppose the mean systolic blood pressure for women over age seventy is $134$ mmHg,
+with a standard deviation of $9$ mmHg, and that blood pressures are normally
+distributed.
+
+\begin{prompt}
+\textbf{(a)} Approximately $95\%$ of women over seventy have blood pressures between
+$\answer{116}$ mmHg and $\answer{152}$ mmHg.
+
+\begin{solution}
+The empirical rule puts $95\%$ of the data within \emph{two} standard deviations of
+the mean. Two standard deviations is $2 \cdot 9 = 18$ mmHg, so
+\[
+134 - 18 = 116 \text{ mmHg}, \qquad 134 + 18 = 152 \text{ mmHg}.
+\]
+\end{solution}
+\end{prompt}
+
+\begin{prompt}
+\textbf{(b)} Approximately $\answer[tolerance=0.2]{99.7}\%$ of women over seventy
+have blood pressures between $107$ mmHg and $161$ mmHg.
+
+\begin{hint}
+How many standard deviations from the mean is $107$? And $161$?
+\end{hint}
+
+\begin{solution}
+Here we work backwards from the endpoints. Both are $27$ mmHg from the mean, and
+\[
+\frac{27}{9} = 3,
+\]
+so the interval is the mean plus or minus \emph{three} standard deviations. By the
+empirical rule that captures about $99.7\%$ of the data.
+\end{solution}
+\end{prompt}
+\end{problem}
+
+\end{document}

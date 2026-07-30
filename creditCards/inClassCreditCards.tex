@@ -1,0 +1,335 @@
+\documentclass[12pt]{ximera}
+\input{../xmPreamble}
+\title{In-Class: Credit Cards and Mortgages}
+\begin{document}
+\begin{abstract}
+How a credit-card balance grows when you pay only the minimum, why the balance falls
+by less than the payment, and what a down payment does to the total cost of a
+30-year mortgage.
+\end{abstract}
+\maketitle
+
+\section*{Credit Cards}
+
+Let's investigate what might happen if we were to not pay off the whole balance on a
+credit card by the Payment Due Date.
+
+According to \href{http://CreditCards.com}{CreditCards.com}'s credit card report, the
+current national average APR for credit cards is $17.67\%$. Let's assume Little Jimmy
+has a credit card with that APR and spent \$850 in his first month having the card.
+
+\begin{problem}
+What does APR stand for, and what is the monthly rate for this credit card?
+
+The monthly rate is $\answer[tolerance=0.005]{1.47}\%$ per month.
+
+\begin{solution}
+APR stands for \textbf{Annual} Percentage Rate --- it is a yearly rate, so to get the
+monthly rate we divide by 12:
+\[
+\frac{\text{APR}}{12 \text{ months}} = \frac{17.67\%}{12 \text{ months}}
+= \frac{1.47\%}{\text{month}}.
+\]
+\end{solution}
+\end{problem}
+
+Suppose Jimmy's minimum payment is \$30, and he makes only that minimum payment each
+month.
+
+\begin{problem}
+Fill in the table below. Each month, interest is charged on the balance left after
+the previous payment; that interest is added to the balance, and then the payment is
+subtracted.
+
+\begin{center}
+\begin{tabular}{|c|l|l|c|l|}
+\hline
+After \_\_ months & Interest charged & Balance & Payment & Remaining balance \\
+\hline
+0 & N/A & \$850 & \$30 & $\$850 - \$30 = \$820$ \\
+\hline
+1 & $\$820(0.0147) = \$12.05$ & $\$832.05$ & \$30 & $\$\answer[tolerance=0.02]{802.05}$ \\
+\hline
+2 & $\$\answer[tolerance=0.02]{11.79}$ & $\$\answer[tolerance=0.02]{813.84}$ & \$30 & $\$\answer[tolerance=0.02]{783.84}$ \\
+\hline
+3 & $\$\answer[tolerance=0.02]{11.52}$ & $\$\answer[tolerance=0.02]{795.36}$ & \$30 & $\$\answer[tolerance=0.02]{765.36}$ \\
+\hline
+\end{tabular}
+\end{center}
+
+\begin{hint}
+For month 1: the balance after the month-0 payment was \$820. Interest is
+$\$820 \cdot 0.0147 = \$12.05$, so the balance becomes
+$\$820 + \$12.05 = \$832.05$, and after the \$30 payment
+$\$832.05 - \$30 = \$802.05$.
+\end{hint}
+
+\begin{solution}
+\[
+\begin{aligned}
+\text{Month 2:} \quad & \$802.05 \cdot 0.0147 = \$11.79, &&
+  \$802.05 + \$11.79 = \$813.84, && \$813.84 - \$30 = \$783.84 \\
+\text{Month 3:} \quad & \$783.84 \cdot 0.0147 = \$11.52, &&
+  \$783.84 + \$11.52 = \$795.36, && \$795.36 - \$30 = \$765.36
+\end{aligned}
+\]
+\end{solution}
+\end{problem}
+
+\begin{problem}
+Even though Jimmy is paying \$30 each month, how much has the balance actually gone
+down each month? Why is it not going down by \$30?
+
+Month 1: $\$\answer[tolerance=0.02]{17.95}$ \qquad
+Month 2: $\$\answer[tolerance=0.02]{18.21}$ \qquad
+Month 3: $\$\answer[tolerance=0.02]{18.48}$
+
+\begin{freeResponse}
+\end{freeResponse}
+
+\begin{solution}
+Comparing the balances month to month:
+\[
+\begin{array}{ll}
+\$850 - \$832.05 = \$17.95 & \text{1st month} \\
+\$832.05 - \$813.84 = \$18.21 & \text{2nd month} \\
+\$813.84 - \$795.36 = \$18.48 & \text{3rd month}
+\end{array}
+\]
+The balance does not go down by the full \$30 because Jimmy is accruing interest.
+Part of each payment goes to the interest that was just added, and only what is left
+reduces the balance. Notice the amount of progress creeps up each month --- as the
+balance shrinks, so does the interest charged on it.
+\end{solution}
+\end{problem}
+
+We can see from just a few months of calculations how this gets complicated quickly
+--- and that is without Jimmy continuing to use the card or varying his payments.
+Luckily there are online calculators that can help.
+
+\begin{problem}
+Go to the
+\href{https://www.bankrate.com/calculators/credit-cards/credit-card-payoff-calculator.aspx}{Bankrate
+credit card payoff calculator} and enter Jimmy's situation.
+
+Two notes before you do. The online calculator starts charging interest on the card
+balance immediately --- it assumes the balance is the amount \emph{after} the first
+payment due date has passed. So you will not be entering \$850 as the card balance.
+Also, the calculator wants the APR, not the monthly rate.
+
+What should you enter as the card balance?
+\[
+\$\answer{820}
+\]
+
+\begin{solution}
+Enter $\$850 - \$30 = \$820$, because Jimmy does not begin accruing interest until
+after the first payment.
+\end{solution}
+\end{problem}
+
+\begin{problem}
+Using the calculator:
+
+\begin{prompt}
+\textbf{(a)} How long will it take Jimmy to pay off this debt making only the minimum
+\$30 payment?
+\begin{freeResponse}
+\end{freeResponse}
+\end{prompt}
+
+\begin{prompt}
+\textbf{(b)} What total dollar amount of interest will he have paid?
+\begin{freeResponse}
+\end{freeResponse}
+\end{prompt}
+
+\begin{prompt}
+\textbf{(c)} Suppose Jimmy doubles the minimum payment each month. How long will it
+take him to pay off the debt, and what will he pay in total interest?
+\begin{freeResponse}
+\end{freeResponse}
+\end{prompt}
+
+\begin{prompt}
+\textbf{(d)} Did doubling the payment cut the payoff time in half? Did it cut the
+interest in half?
+\begin{freeResponse}
+\end{freeResponse}
+\end{prompt}
+
+\begin{prompt}
+\textbf{(e)} How much must Jimmy pay each month to pay it off in 6 months? In 1 year?
+\begin{freeResponse}
+\end{freeResponse}
+\end{prompt}
+
+\begin{prompt}
+\textbf{(f)} Did the monthly amount get cut in half when the time doubled? Explain
+how part (d) could have told you in advance whether it would.
+\begin{freeResponse}
+\end{freeResponse}
+\end{prompt}
+\end{problem}
+
+\section*{Mortgages}
+
+In the pre-class work, some general advice was given: that no more than $30\%$ to
+$40\%$ of one's income should go towards housing payments, either as rent or as a
+mortgage. If you read more about these rules, you'll find it's not necessarily
+\emph{housing} that should stay under $30\%$--$40\%$ of income, but \emph{total debt}.
+There are helpful calculators such as the
+\href{https://www.bankrate.com/calculators/mortgages/new-house-calculator.aspx}{Bankrate
+new house calculator}, where you can enter all sorts of debt factors alongside a
+mortgage.
+
+\begin{problem}
+Try inputting Susie and her significant other's combined income of \$103,500 into the
+calculator above. Leave the auto-filled values in the ``New Home Info'' section, and
+set everything in ``Monthly Expenses'' to \$0.
+
+\begin{prompt}
+\textbf{(a)} You should \emph{not} have entered ``\$103,500'' in the wages section.
+Why not? What value should you enter?
+\begin{freeResponse}
+\end{freeResponse}
+\end{prompt}
+
+\begin{prompt}
+\textbf{(b)} What does the calculator give for an ``Available Mortgage Payment,'' and
+what percent of the monthly income is that?
+\begin{freeResponse}
+\end{freeResponse}
+\end{prompt}
+
+\begin{prompt}
+\textbf{(c)} Now add values to the ``Monthly Expenses'' section --- a car payment,
+credit card payments, maybe student loans under ``other debts.'' Keep everything else
+the same. How does this change the Available Mortgage Payment? Record some values
+that \emph{do} change it, and some that do \emph{not}.
+\begin{freeResponse}
+\end{freeResponse}
+\end{prompt}
+\end{problem}
+
+Now let's focus on the mortgage loan itself. Suppose a buyer is looking to purchase a
+home for \$175,000, using the
+\href{https://www.bankrate.com/calculators/mortgages/mortgage-calculator-beta/}{Bankrate
+mortgage calculator}. Set Homeowner's Insurance, Property Taxes, and HOA fees to \$0
+so we can focus on the mortgage itself --- though those values give you an idea of
+what else to consider when home-buying. Use a mortgage rate of $4.8\%$ and a 30 year
+loan.
+
+\begin{problem}
+Suppose the buyer wants to put $20\%$ of the cost down. (Putting $20\%$ or more down
+usually means the buyer does not have to pay mortgage insurance on the loan.)
+
+\begin{prompt}
+\textbf{(a)} How much would the down payment be?
+\[
+\$\answer{35000}
+\]
+\begin{solution}
+$20\%$ of \$175,000 is $0.20 \cdot \$175{,}000 = \$35{,}000$.
+\end{solution}
+\end{prompt}
+
+\begin{prompt}
+\textbf{(b)} Put this into the calculator. The monthly mortgage payment is
+\[
+\$\answer[tolerance=1]{734} \text{ per month.}
+\]
+\end{prompt}
+
+\begin{prompt}
+\textbf{(c)} After the 30 years of the loan, how much in total would the buyer have
+paid for the home? Don't forget to include the down payment.
+\[
+\$\answer[tolerance=10]{299240}
+\]
+
+\begin{hint}
+First convert 30 years into months.
+\end{hint}
+
+\begin{solution}
+\[
+30 \text{ years} \cdot \frac{12 \text{ months}}{1 \text{ year}} = 360 \text{ months},
+\]
+\[
+\frac{\$734}{\text{month}} \cdot 360 \text{ months} = \$264{,}240,
+\]
+and adding the down payment,
+\[
+\$264{,}240 + \$35{,}000 = \$299{,}240.
+\]
+\end{solution}
+\end{prompt}
+\end{problem}
+
+\begin{problem}
+$20\%$ is a lot for a down payment. Suppose the buyer is able to put together
+\$20,000 instead.
+
+\begin{prompt}
+\textbf{(a)} What percentage of the home price is this down payment?
+\[
+\answer[tolerance=0.05]{11.43}\%
+\]
+\begin{solution}
+\$20,000 is what percent of \$175,000? From $\$20{,}000 = x \cdot \$175{,}000$,
+\[
+x = \frac{\$20{,}000}{\$175{,}000} = 0.1143,
+\]
+so \$20,000 is $11.43\%$ of \$175,000.
+\end{solution}
+\end{prompt}
+
+\begin{prompt}
+\textbf{(b)} Put \$20,000 into the calculator as the down payment. The monthly
+mortgage payment is
+\[
+\$\answer[tolerance=1]{813} \text{ per month.}
+\]
+\end{prompt}
+
+\begin{prompt}
+\textbf{(c)} After 30 years, how much in total would the buyer have paid, including
+the down payment?
+\[
+\$\answer[tolerance=10]{312680}
+\]
+\begin{solution}
+\[
+\frac{\$813}{\text{month}} \cdot 360 \text{ months} = \$292{,}680,
+\]
+\[
+\$292{,}680 + \$20{,}000 = \$312{,}680.
+\]
+\end{solution}
+\end{prompt}
+
+\begin{prompt}
+\textbf{(d)} How much more will the buyer pay over the 30 year mortgage by making the
+smaller down payment?
+\[
+\$\answer[tolerance=10]{13440}
+\]
+\begin{solution}
+\[
+\begin{array}{ll}
+\$35{,}000 \text{ down payment} & \text{Total: } \$299{,}240 \\
+\$20{,}000 \text{ down payment} & \text{Total: } \$312{,}680
+\end{array}
+\]
+\[
+\$312{,}680 - \$299{,}240 = \$13{,}440.
+\]
+So putting down \$20,000 instead of \$35,000 in this scenario costs an additional
+\$13,440 overall --- notice that is nearly as much as the \$15,000 the buyer
+``saved'' up front.
+\end{solution}
+\end{prompt}
+\end{problem}
+
+\end{document}
